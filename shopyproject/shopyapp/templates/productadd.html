@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productadd</title>
+</head>
+
+<body>
+    <form action="{% url 'shopy:productadd' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label>Stock Name</label></td>
+                <td><input type="text" name="product_name"></td>
+            </tr>
+            <tr>
+                <td><label>Stock Description</label></td>
+                <td><input type="text" name="product_description"></td>
+            </tr>
+            <tr>
+                <td><label>Stock Image</label></td>
+                <td><input type="file" name="product_image"></td>
+            </tr>
+            <tr>
+                <td><label>Stock Price</label></td>
+                <td><input type="number" name="product_price"></td>
+            </tr>
+            <tr>
+                <td><label>Stock Quantity</label></td>
+                <td><input type="number" name="product_quantity"></td>
+            </tr>
+            <tr>
+                <td><label>category</label></td>
+                <td><select name="cat" id="">
+                    {% for i in c %}
+                    <option value="{{i.category_name}}">{{i.category_name}}</option>
+                    {% endfor %}
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

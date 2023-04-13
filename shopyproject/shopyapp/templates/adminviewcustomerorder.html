@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          padding: 5px;
+        }
+        table {
+          border-spacing: 15px;
+          margin: 25px;
+        }
+        </style>
+</head>
+<body>
+    <table style="width:85%">
+        <h3>Customers Order</h3>
+        <tr>
+            <th>User</th>
+            <th>Country</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Pin Code</th>
+            <th>Phone No:</th>
+            <th>Payment Type</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+        </tr>
+        
+        {% for i in z %}
+        <tr>
+            <td>{{i.USER}}</td>
+            <td>{{i.country}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.postcode}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.payment_type}}</td>
+            <td>{{i.product_name}}</td>
+            <td>{{i.product_price}}</td>
+            <td>{{i.product_quantity}}</td>
+        </tr>
+        {% endfor %}
+
+      </table>
+</body>
+</html>
